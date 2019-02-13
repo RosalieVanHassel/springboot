@@ -1,4 +1,17 @@
 function versturen(){
-    alert("hoi");
+
+    var bootnaam = document.getElementById("bootnaamvak").value;
+    alert(bootnaam);
 }
-//$(document).ready(function(){})
+$(document).on('click', '#test', function(){
+    $.ajax({
+            type:'get',
+            url: '/api',
+            success: function(result) {
+                document.getElementById("test").innerHTML = result;
+
+            }
+        });
+
+
+})
